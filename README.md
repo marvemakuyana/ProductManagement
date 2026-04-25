@@ -111,6 +111,8 @@ SQL Server
 
 # Entity Relationship Diagram
 
+![ERD](docs/ERD.png)
+
 # Setup Instructions
 
 ## Requirements
@@ -123,9 +125,9 @@ SQL Server
 
 1. Clone repository
 
-powershell
+```
 git clone <repo-url>
-
+```
 2. Open solution in Visual Studio
 3. Update connection string in:
 ```
@@ -133,9 +135,9 @@ appsettings.json
 ```
 4. Apply database migrations
 
-powershell
+```
 Update-Database
-
+```
 5. Run application
 6. Register a new user account
 7. Login and start managing products
@@ -149,6 +151,3 @@ Update-Database
 - Docker Deployment
 - Cloud Hosting (Azure)
 
-## Author
-
-Marvellous Makuyana
