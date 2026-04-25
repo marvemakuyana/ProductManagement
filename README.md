@@ -1,110 +1,153 @@
-# Product Management System
+﻿# Product Management System
 
-## Overview
-A full-stack Product Management System built using ASP.NET Core MVC, Web API, Entity Framework Core, and SQL Server.
+A full-stack Product Management application developed using **ASP.NET Core MVC**, **ASP.NET Core Web API**, **Entity Framework Core**, and **SQL Server**.
 
-The application allows authenticated users to manage their own categories and products securely.
-
----
-
-## Features
-
-### Authentication
-- User registration
-- User login/logout
-- ASP.NET Core Identity
-
-### Category Management
-- Create category
-- Edit category
-- Unique category codes
-- Per-user data isolation
-
-### Product Management
-- Create product
-- Edit product
-- Delete product
-- Auto-generated product codes
-- Product image upload
-
-### Excel Features
-- Import products from Excel
-- Export products to Excel
-
-### Other Features
-- Pagination
-- Audit fields
-- Swagger API
-- Clean Architecture layers
+This system allows authenticated users to securely manage their own categories and products with support for Excel import/export, image uploads, auditing, and API endpoints.
 
 ---
 
-## Technology Stack
+# Project Highlights
 
-### Backend
+✅ Secure user authentication using ASP.NET Core Identity  
+✅ Per-user data isolation (users only manage their own records)  
+✅ Category & Product CRUD operations  
+✅ Unique category codes with validation rules  
+✅ Auto-generated product codes  
+✅ Product image upload  
+✅ Excel import/export using EPPlus  
+✅ Pagination  
+✅ Audit trail fields  
+✅ Swagger API documentation  
+✅ Layered architecture (Controller / Service / Repository)
+
+---
+
+# Technology Stack
+
+## Backend
 - C#
 - ASP.NET Core (.NET 8)
+- ASP.NET Core MVC
 - ASP.NET Core Web API
 - Entity Framework Core
 
-### Frontend
-- ASP.NET Core MVC
+## Frontend
 - Razor Views
-- Bootstrap
+- Bootstrap 5
 
-### Database
+## Database
 - SQL Server
 
-### Libraries
-- EPPlus (Excel)
+## Additional Libraries
+- ASP.NET Core Identity
+- EPPlus (Excel Import/Export)
+- Swashbuckle (Swagger)
 
 ---
 
-## Architecture
+# Core Features
 
-- Controllers
-- Services
-- Repositories
-- Data (DbContext)
-- Models
+# Authentication
+- User Registration
+- Login / Logout
+- Identity-based security
 
----
+# Category Management
+- Create categories
+- Edit categories
+- Unique category code validation
+- Example format: `ABC123`
 
-## Security
+# Product Management
+- Create products
+- Edit products
+- Delete products
+- Product image upload
+- Automatic product code generation
 
-Each authenticated user can only access their own categories and products.
+# Excel Integration
+- Upload products via Excel
+- Download products as Excel spreadsheet
 
----
+# Auditing
+Tracks:
 
-## Setup Instructions
+- CreatedBy
+- CreatedDate
+- UpdatedBy
+- UpdatedDate
 
-1. Clone project
-2. Open solution in Visual Studio
-3. Update connection string in `appsettings.json`
-4. Run migrations:
+# API Endpoints
 
-```powershell
-Update-Database
-```
-5. Run project
-6. Register account
-7. Login
+Swagger UI available at:
 
----
-## Swagger API
-
-Available at:
+```text
 /swagger
+```
+Includes:
 
----
-## Future Improvements
+- Products API
+- Categories API
+
+# Security
+
+Each authenticated user can only access their own:
+
+- Categories
+- Products
+
+Data ownership is enforced using the logged-in user's Identity UserId.
+
+# Architecture
+Controllers
+   ↓
+Services
+   ↓
+Repositories
+   ↓
+Entity Framework Core
+   ↓
+SQL Server
+
+# Entity Relationship Diagram
+
+# Setup Instructions
+
+## Requirements
+
+- Visual Studio 2022
+- SQL Server / SQL Server Express / LocalDB
+.- NET 8 SDK
+
+## Run Steps
+
+1. Clone repository
+
+powershell
+git clone <repo-url>
+
+2. Open solution in Visual Studio
+3. Update connection string in:
+```
+appsettings.json
+```
+4. Apply database migrations
+
+powershell
+Update-Database
+
+5. Run application
+6. Register a new user account
+7. Login and start managing products
+
+# Future Improvements
 
 - JWT Authentication
-- Dashboard Reports
-- DTO + AutoMapper
-- Soft Deletes
+- Dashboard Analytics
+- Unit Testing
+- Soft Delete
 - Docker Deployment
-
+- Cloud Hosting (Azure)
 
 ## Author
 
