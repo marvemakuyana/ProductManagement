@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProductManagement.Models.Category>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+<h2>Category Management</h2>
+
+<div class="d-flex justify-content-end mb-3">
+    <p> 
+        <a asp-action="Create" class="btn btn-primary">Add Category</a>
+    </p>
+</div>
+
+@if (!Model.Any())
+{
+    <p class="text-center">No categories found.</p>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Active</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CategoryCode</td>
+                <td>@item.IsActive</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-secondary">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
