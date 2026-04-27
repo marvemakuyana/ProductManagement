@@ -99,15 +99,10 @@ Each authenticated user can only access their own:
 Data ownership is enforced using the logged-in user's Identity UserId.
 
 # Architecture
-Controllers
-   ↓
-Services
-   ↓
-Repositories
-   ↓
-Entity Framework Core
-   ↓
-SQL Server
+
+## System Architecture
+
+![Architecture](docs/Architecture.png)
 
 # Entity Relationship Diagram
 
